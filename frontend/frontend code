@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Titlu Documentului</title>
+    <title>MEMEIT</title>
   </head>
   <body>
-    Continutul paginii
+    <h1>Pagina HTML</h1>
   </body>
 </html>
