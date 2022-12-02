@@ -2,6 +2,30 @@
 <html>
   <head>
     <title>MEMEIT</title>
+    <script type="text/javascript">
+      function closeLogin() {
+          document.getElementById("container").removeChild(document.getElementById("overlay"));
+      }
+      function loginOverlay () {
+          var overlay = document.createElement("div");
+          var loginForm = document.createElement("div");
+          overlay.setAttribute("id", "overlay");
+          overlay.style.position = "fixed";
+          overlay.style.top = "200px";
+          overlay.style.width = "488px";
+          overlay.style.height = "641px";
+          overlay.style.left = "900px";
+          overlay.style.radius ="5px";
+          overlay.style.backgroundColor = "rgba(111, 48, 150, 1)";
+          loginForm.style.width = "500px";
+          loginForm.style.marginTop = "100px";
+          loginForm.style.marginLeft = "auto";
+          loginForm.style.marginRight = "auto";
+          loginForm.innerHTML = "<form > Username <br/> <input type=\"text\" name=\"firstname\"/> <br/>Parola <br/> <input type=\"text\" name=\"lastname\"/></form><br/><a href='#c' onclick='closeLogin();'>close</a> ";
+          overlay.appendChild(loginForm);
+          document.getElementById("container").appendChild(overlay);
+      }
+  </script>
   </head>
   <style>
  .rectangle {
@@ -12,35 +36,31 @@
   top: 500px;
 background: #6F3096;
 border-radius: 5px;
+ }
+ .navbar {
+  overflow: hidden;
+  position: fixed; 
+  top: 66px;; 
+  width: 100%; 
+  right: 99px;
+}
+.navbar a {
+  float: right;
+  color: #06114F;
+  text-align: center;
+  padding: 10px 10px;
+  text-decoration: none;
+  font-family: 'Merriweather'; 
+  font-style: light;
 }
 
-li {
-  display: inline;
-  color: #06114F;
-  font-family: 'Merriweather';
-font-style: normal;
-font-weight: 300;
-font-size: 20px;
-line-height: 25px;
-}
 </style>
   <body>
-    <ul>
-      <div style =" position: absolute; 
-      width:112px;
-      height:25px;
-     right:232px;
-      top:66px; ">
-      <li><a href="#home">Logare</a></li>
+    <div class="navbar">
+      <a href="#" onclick="loginOverlay()">Logare</a>
+      <a href="#">Creare cont</a>
     </div>
-     <div style = "position: absolute;
-      width:112px;
-       height:25px;
-       right: 99px;
-       top:66px;">
-      <li><a href="#news">Creare cont</a></li>
-    </div> 
-    </ul>
+    
     <div style = "position: absolute;
     width: 197px;
     height: 56px;
