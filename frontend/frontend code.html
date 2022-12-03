@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+
     <title>MEMEIT</title>
     <script type="text/javascript">
       function closeLogin() {
@@ -11,22 +12,20 @@
           var loginForm = document.createElement("div");
           overlay.setAttribute("id", "overlay");
           overlay.style.position = "fixed";
-          overlay.style.top = "200px";
-          overlay.style.width = "488px";
-          overlay.style.height = "641px";
-          overlay.style.left = "900px";
-          overlay.style.radius ="5px";
-          overlay.style.backgroundColor = "rgba(111, 48, 150, 1)";
+          overlay.style.top = "35%";
+          overlay.style.left = "45%";
+          overlay.style.backgroundColor = "rgba(255,255,255,0)";
           loginForm.style.width = "500px";
           loginForm.style.marginTop = "100px";
           loginForm.style.marginLeft = "auto";
           loginForm.style.marginRight = "auto";
-          loginForm.innerHTML = "<form > Username <br/> <input type=\"text\" name=\"firstname\"/> <br/>Parola <br/> <input type=\"text\" name=\"lastname\"/></form><br/><a href='#c' onclick='closeLogin();'>close</a> ";
+          loginForm.innerHTML = "<form> First name: <input type=\"text\" name=\"firstname\"/> <br/>Lastname: <input type=\"text\" name=\"lastname\"/></form><br/><a href='#c' onclick='closeLogin();'>close</a> ";
           overlay.appendChild(loginForm);
           document.getElementById("container").appendChild(overlay);
       }
   </script>
   </head>
+
   <style>
  .rectangle {
   position: absolute;
@@ -38,20 +37,10 @@ background: #6F3096;
 border-radius: 5px;
  }
  .navbar {
-  overflow: hidden;
-  position: fixed; 
-  top: 66px;; 
-  width: 100%; 
-  right: 99px;
-}
-.navbar a {
-  float: right;
-  color: #06114F;
-  text-align: center;
-  padding: 10px 10px;
-  text-decoration: none;
-  font-family: 'Merriweather'; 
-  font-style: light;
+  position: fixed;
+    top: 60px;
+    width: 100%;
+    z-index: 1;
 }
 #rectangle{
   position: absolute;
@@ -121,17 +110,25 @@ background: #06114F;
 </style>
   <body>
     <div class="navbar">
-      <a href="#" onclick="loginOverlay()">Logare</a>
-      <a href="#">Creare cont</a>
+      <div style ="position: absolute;
+      right: 190px;
+      top: 15px;">
+      <div id="container">
+      <a href="#" onclick="loginOverlay()">Logare</a></div>
+      </div>
+      <div style ="position: absolute;
+      right: 100px;
+      top: 15px;" >
+      <a href="#" onclick="loginOverlay()">Creare cont</a></div>
+      <div style = "position: absolute;
+      width: 197px;
+      height: 56px;
+      left: 190px;
+      top: 1px;">
+        <img src='Asset.png'/>
+      </div>
     </div>
-    
-    <div style = "position: absolute;
-    width: 197px;
-    height: 56px;
-    left: 45px;
-    top: 50px;">
-      <img src='Asset.png'/>
-    </div>
+
     <div style = "position: absolute; width: 659px; height: 133px; left: 55px; top: 288px; font-family: 'Merriweather';
     font-style: normal;
     font-weight: 900;
@@ -172,7 +169,7 @@ background: #06114F;
   text-align: center;
   
   color: #FFFFFF;">
-  <p>Upload a MEME</p>
+  <a href="#upload" style="color: white"><p>Upload a MEME</p></a>
 </div>
 <br>
 <div style = "position: absolute;
@@ -180,12 +177,12 @@ width: 647px;
 height: 647px;
 right:99px;
 top: 78px;">
-      <img src='wss.png'/>
+     <img src='wss.png'/>
     </div>
     <div id="rectangle"></div>
-    <div id="rectangle1"></div>
+     <div id="rectangle1"></div>
     <div id="rectangle11"></div>
-    <div id="rectangle10"></div>
+    <div id="rectangle10"></div>>
     <div style = "position: absolute;
     width: 389px;
     height: 125px;
@@ -200,6 +197,7 @@ top: 78px;">
     color: #252F65;">
     <p>Ai tupeu și crezi că ești<br/> amuzant?</p>
   </div>
+  <form>
   <div style = "position: absolute;
   width: 103.38px;
   height: 19.49px;
@@ -211,8 +209,14 @@ top: 78px;">
   font-size: 16px;
   line-height: 20px;
   color: #06114F;">
-  <p>Descriere</p>
+<a id="upload"><label for="desc">Descriere</label></a><br>
 </div>
+<div style = "position: absolute;
+width: 600px;
+height: 50px;
+left: 1000px;
+top: 996.88px;">
+<input type="text" id="desc" name="desc"><br> </div>
 <div style = "position: absolute;
 width: 288.75px;
 height: 34.61px;
@@ -269,6 +273,7 @@ top: 1263px;
   color: #FFFFFF;">
   <p>Trimite</p>
 </div>
+</form>
 <div style = "position: absolute;
 width: 333px;
 height: 90px;
@@ -327,19 +332,19 @@ left:1600px; ">
     left: 950px;
     right: 3.61%;
     top: 2100px">
-      <img src='Vector.png'/>
+      <a href="https://www.instagram.com/lsacbucuresti/"><img src='Vector.png'/></a>
     </div>
     <div style = "position: absolute;
     left: 990px;
     right: 3.61%;
     top: 2100px">
-      <img src='twitch.png'/>
+      <a href="https://www.twitch.tv/lsac_bucuresti"><img src='twitch.png'/></a>
     </div>
       <div style = "position: absolute;
     left: 1030px;
     right: 3.61%;
     top: 2100px">
-      <img src='fb.png'/>
+     <a href="https://www.facebook.com/LsacBucuresti/"><img src='fb.png'/></a>
     </div>
     <div style = "position: absolute;
     width: 1440px;
