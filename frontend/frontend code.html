@@ -19,10 +19,27 @@ function loginOverlay () {
           loginForm.style.marginTop = "100px";
           loginForm.style.marginLeft = "200px";
           loginForm.style.marginRight = "auto";
-          loginForm.innerHTML = "<form> Username: <input type=\"text\" name=\"username\"/> <br/>Parola: <input type=\"text\" name=\"parola\"/></form><br/><a href='#c' onclick='closeLogin();'>close</a> ";
+          loginForm.innerHTML = "<form> Username <br/> <input type=\"text\" name=\"username\"/> <br/>Parola <br/> <input type=\"text\" name=\"parola\"/></form><br/><a href='#c' onclick='closeLogin();'>close</a> ";
           overlay.appendChild(loginForm);
           document.getElementById("container").appendChild(overlay);
       }
+      function loginOverlay2 () {
+          var overlay = document.createElement("div");
+          var loginForm = document.createElement("div");
+          overlay.setAttribute("id", "overlay");
+          overlay.style.position = "fixed";
+          overlay.style.top = "35%";
+          overlay.style.left = "35%";
+          overlay.style.backgroundColor = "rgba(255, 255, 255, 1)";
+          overlay.style.border = "1px solid #4f4d4d";
+          loginForm.style.width = "500px";
+          loginForm.style.marginTop = "100px";
+          loginForm.style.marginLeft = "200px";
+          loginForm.style.marginRight = "auto";
+          loginForm.innerHTML = "<form> Username <br/> <input type=\"text\" name=\"username\"/> <br/> Email <br/> <input type=\"text\" name=\"email\"/> <br/> Parola <br/> <input type=\"text\" name=\"parola\"/></form><br/><a href='#c' onclick='closeLogin();'>close</a> ";
+          overlay.appendChild(loginForm);
+          document.getElementById("container").appendChild(overlay);
+      }      
       function allowDrop(even) {
         even.preventDefault();
     }
@@ -135,7 +152,7 @@ function loginOverlay () {
       <div style ="position: absolute;
       right: 100px;
       top: 15px;" >
-      <a href="#" onclick="loginOverlay()">Creare cont</a></div>
+      <a href="#" onclick="loginOverlay2()">Creare cont</a></div>
       <div style = "position: absolute;
       width: 197px;
       height: 56px;
