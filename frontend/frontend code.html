@@ -12,16 +12,30 @@ function loginOverlay () {
           overlay.setAttribute("id", "overlay");
           overlay.style.position = "fixed";
           overlay.style.top = "35%";
-          overlay.style.left = "45%";
-          overlay.style.backgroundColor = "rgba(255,255,255,0)";
+          overlay.style.left = "35%";
+          overlay.style.backgroundColor = "rgba(255, 255, 255, 1)";
+          overlay.style.border = "1px solid #4f4d4d";
           loginForm.style.width = "500px";
           loginForm.style.marginTop = "100px";
-          loginForm.style.marginLeft = "auto";
+          loginForm.style.marginLeft = "200px";
           loginForm.style.marginRight = "auto";
-          loginForm.innerHTML = "<form> First name: <input type=\"text\" name=\"firstname\"/> <br/>Lastname: <input type=\"text\" name=\"lastname\"/></form><br/><a href='#c' onclick='closeLogin();'>close</a> ";
+          loginForm.innerHTML = "<form> Username: <input type=\"text\" name=\"username\"/> <br/>Parola: <input type=\"text\" name=\"parola\"/></form><br/><a href='#c' onclick='closeLogin();'>close</a> ";
           overlay.appendChild(loginForm);
           document.getElementById("container").appendChild(overlay);
       }
+      function allowDrop(even) {
+        even.preventDefault();
+    }
+ 
+    function drag(even) {
+        even.dataTransfer.setData("text", even.target.id);
+    }
+ 
+    function drop(even) {
+        even.preventDefault();
+        var fetchData = even.dataTransfer.getData("text");
+        even.target.appendChild(document.getElementById(fetchData));
+    }     
   </script>
   </head>
 
@@ -34,6 +48,12 @@ function loginOverlay () {
     top: 500px;
     background: #6F3096;
     border-radius: 5px;
+}
+#getData {
+  width: 250px;
+  height: 200px;
+  padding: 10px;
+  border: 1px solid #4f4d4d;
 }
 .navbar {
     position: fixed;
@@ -145,7 +165,6 @@ function loginOverlay () {
   font-size: 20px;
   line-height: 23px;
   text-align: center;
-  
   color: #252F65;">
   <br>
     <p>Platforma ideală pentru studenții de la Politehnică, amuzați de câte materii o să pice semestrul asta.</p>  
@@ -189,7 +208,6 @@ top: 78px;">
     font-weight: 700;
     font-size: 32px;
     line-height: 121.1%;
-    /* or 39px */ 
     color: #252F65;">
     <p>Ai tupeu și crezi că ești<br/> amuzant?</p>
   </div>
